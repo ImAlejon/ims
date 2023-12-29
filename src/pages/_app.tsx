@@ -1,6 +1,7 @@
 import { type AppType } from "next/app";
 
 import { api } from "~/utils/api";
+import { ClerkProvider } from "@clerk/nextjs";
 
 import "~/styles/globals.css";
 import { Inter as FontSans } from "next/font/google"
@@ -10,10 +11,13 @@ export const fontSans = FontSans({
   variable: "--font-sans",
 })
 const MyApp: AppType = ({ Component, pageProps }) => {
-  return <Component {...pageProps} className={cn(
-          "min-h-screen bg-background font-sans antialiased",
-          fontSans.variable
-        )}/>;
+  return (<ClerkProvider>
+
+    <Component {...pageProps} className={cn(
+            "min-h-screen bg-background font-sans antialiased",
+            fontSans.variable
+          )}/>
+  </ClerkProvider>);
 };
 
 export default api.withTRPC(MyApp);
