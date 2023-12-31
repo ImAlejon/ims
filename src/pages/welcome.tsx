@@ -1,7 +1,6 @@
-import { SignInButton, UserButton, auth } from "@clerk/nextjs";
-
-export default function welcome(){
-    return (
-        <header className="flex justify-end p-4">{!auth.name ? <SignInButton/> : <UserButton/>}</header>
-        )
+import Header from "~/components/ui/header";
+export default function welcome() {
+  return (
+    <Header/>
+  );
 }
