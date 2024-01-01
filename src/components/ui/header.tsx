@@ -13,7 +13,7 @@ function Header(){
         
         <div>
         <SignedIn>
-            <UserButton/>
+            <UserButton afterSignOutUrl="/sign-in"/>
         </SignedIn>
         <SignedOut>
             <SignInButton mode='modal'>
